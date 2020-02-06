@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <title>{{ site.title }}</title>
+    <meta charset="utf-8">
+    <!-- Default Header -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% if site.description %}<meta name="description" content="{{ site.description | strip_html | strip_newlines | truncate: 160 }}">{% endif %}
+    {% if site.author %}<meta name="author" content="{{ site.author }}">{% endif %}
+    {% if site.publisher %}<meta name="publisher" content="{{ site.publisher }}">{% endif %}
+    {% if site.copyright.content.name %}<meta name="copyright" content="{{ site.copyright.content.name }}">{% endif %}
+    <meta name="robots" content="{% if site.robots %}{{ site.robots }}{% else %}noindex, nofollow{% endif %}">
+    <meta name="generator" content="{% if site.generator %}{{ site.generator }}{% else %}Jekyll{% endif %}">
+    {% if site.keywords %}<meta name="keywords" content="{{ site.keywords }}">{% endif %}
+    <!-- Open Graph Meta Tags (ogp.me) -->
+    {% if site.ogimage %}<meta property="og:image" content="{{ site.ogimage | relative_url }}">{% endif %}
+    {% if site.ogimagewidth %}<meta property="og:image:width" content="{{ site.ogimagewidth }}">{% endif %}
+    {% if site.ogimageheight %}<meta property="og:image:height" content="{{ site.ogimageheight }}">{% endif %}
+    {% if site.author %}<meta property="og:image:alt" content="{{ site.author }}">{% endif %}
+    {% if site.oglocale %}<meta property="og:locale" content="{{ site.oglocale }}">{% endif %}
+    {% if site.oglocalealternate %}<meta property="og:locale:alternate" content="{{ site.oglocalealternate }}">{% endif %}
+    <meta property="og:type" content="website">
+    {% if site.author %}<meta property="og:title" content="{{ site.author }}">{% endif %}
+    <meta property="og:description" content="{{ site.description }}">
+    {% if site.ogurl %}<meta property="og:url" content="{{ site.ogurl }}">{% endif %}
+    <meta property="og:site_name" content="{{ site.title }}">
+    {% if site.oglatitude %}<meta property="og:latitude" content="{{ site.oglatitude }}">{% endif %}
+    {% if site.oglongitude %}<meta property="og:longitude" content="{{ site.oglongitude }}">{% endif %}
+    {% if site.ogstreetaddress %}<meta property="og:streetaddress" content="{{ site.ogstreetaddress }}">{% endif %}
+    {% if site.oglocality %}<meta property="og:locality" content="{{ site.oglocality }}">{% endif %}
+    {% if site.ogregion %}<meta property="og:region" content="{{ site.ogregion }}">{% endif %}
+    {% if site.postalcode %}<meta property="og:postal-code" content="{{ site.postalcode }}">{% endif %}
+    {% if site.countryname %}<meta property="og:country-name" content="{{ site.countryname }}">{% endif %}
+    {% if site.phonenumber %}<meta property="og:phone_number" content="{{ site.phonenumber }}">{% endif %}
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@{{ site.twitter }}">
+    <meta name="twitter:title" content="{{ site.author }}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    {% if site.ogimage %}<meta name="twitter:image" content="{{ site.ogimage | relative_url }}">{% endif %}
+    {% if site.ogimagewidth %}<meta name="twitter:image:width" content="{{ site.ogimagewidth }}">{% endif %}
+    {% if site.ogimageheight %}<meta name="twitter:image:height" content="{{ site.ogimageheight }}">{% endif %}
+    <meta name="twitter:image:alt" content="{{ site.author }}">
+    <!-- Browser Compability Meta Tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=7">
+    <meta http-equiv="x-ua-compatible" content="ie=8">
+    <meta http-equiv="x-ua-compatible" content="ie=emulateie7">
+    <meta http-equiv="x-ua-compatible" content="ie=emulateie8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=5">
+    <meta http-equiv="x-ua-compatible" content="ie=5; ie=8">
+    <meta http-equiv="x-ua-compatible" content="chrome=1">
+    <meta http-equiv="x-ua-compatible" content="ie=emulateie7; chrome=1">
+    <!-- Pinterest -->
+    <meta name="pinterest" content="nopin" description="Sorry, you can't save from our website yet!">
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "/favicon.ico" | relative_url }}">
+    <link rel="icon" type="image/x-icon" href="{{ "/favicon.ico" | relative_url }}">
+    <!-- Web App Settings -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Apple iOS Settings. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Geo Positioning Meta Tags -->
+    {% if site.oglatitude %}{% if site.oglongitude %}<meta name="geo.position" content="{{ site.oglatitude }};{{ site.oglongitude }}">{% endif %}{% endif %}
+    {% if site.georegion %}<meta name="geo.region" content="{{ site.georegion }}">{% endif %}
+    {% if site.ogstreetaddress %}{% if site.ogpostalcode %}{% if site.oglocality %}{% if site.ogcountryname %}<meta name="geo.placename" content="{{ site.ogstreetaddress }}, {{ site.ogpostalcode }} {{ site.oglocality }}, {{ site.ogcountryname }}"> {% endif %}{% endif %}{% endif %}{% endif %}
+    {% if site.oglatitude %}{% if site.oglongitude %}<meta name="ICBM" content="{{ site.oglatitude }};{{ site.oglongitude }}">{% endif %}{% endif %}
+    <meta name="DC.title" content="{{ site.title }}">
+    <!-- Rest of the Header -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ "/css/styles.css" | relative_url }}">
+</head>
+
+<body>
+    <div id="container">
+        <div id="photo"></div>
+        <main id="content">
+            <h1 id="title">{{ site.name }}</h1>
+            <div id="bio">
+                {{ content }}
+            </div>
+            <ul id="social">
+                {% if site.twitter %}<li>
+                    <div class="twitter"></div>
+                    <a href="https://twitter.com/{{ site.twitter }}">@{{ site.twitter }}</a>
+                </li>{% endif %}
+                {% if site.linkedin.link %}<li>
+                    <div class="linkedin"></div>
+                    <a href="{{ site.linkedin.link }}">{{ site.linkedin.text }}</a>
+                </li>{% endif %}
+                {% if site.github %}<li>
+                    <div class="github"></div>
+                    <a href="https://github.com/{{ site.github }}">{{ site.github }}</a>
+                </li>{% endif %}
+                {% if site.email.link %}{% if site.email.text %}<li>
+                    <div class="email"></div>
+                    <a href="mailto:{{ site.email.link }}">{{ site.email.text }}</a>
+                </li>{% endif %}{% endif %}
+            </ul>
+        </main>
+        <footer id="footer">
+            &copy; {{ site.time | date: "%Y" }} {{ site.copyright.content.name }}{% if site.copyright.photos.name %} • Photo <a href="{{ site.copyright.photos.link }}">{{ site.copyright.photos.name }}</a>{% endif %}
+        </footer>
+    </div>
+    {% include google-analytics.html %}
+</body>
+
+</html>

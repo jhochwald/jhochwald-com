@@ -1,0 +1,54 @@
+# Jekyll Configuration
+markdown: kramdown
+
+sass:
+  style: compressed
+  exclude:
+  - .gitignore
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - start.sh
+
+# Variables: Configuration
+google_analytics_id:
+
+# Variables: Content
+title: Joerg Hochwald
+description: My name is Joerg Hochwald a/k/a Josh. I’m a enterprise architect living in Frankfurt am Main, Germany.
+author: Joerg Hochwald
+publisher: Joerg Hochwald
+copyright: Joerg Hochwald
+robots: index, follow
+generator: Handmade with love
+keywords: Joerg Hochwald, Josh, consultant, enterprise architect, PowerShell, Enterprise Mobility
+oglatitude: 50.1021550
+oglongitude: 8.6630010
+ogstreetaddress: Schleusenstr. 9
+oglocality: Frankfurt am Main
+ogregion: Hessen
+ogpostalcode: 60327
+ogcountryname: DE
+ogphonenumber: +496999998080
+ogimage: /images/twitter.png
+ogimagewidth: 231
+ogimageheight: 232
+oglocale: en_US
+oglocalealternate: de_DE
+georegion: DE-HE
+ogurl: https://jhochwald.com/
+name: Joerg Hochwald
+email:
+  link: contact&#064;jhochwald&#046;com
+  text: contact&#064;jhochwald&#046;com
+twitter: jhochwald
+linkedin:
+  link: https://de.linkedin.com/in/jhochwald
+  text: LinkedIn
+github: jhochwald
+copyright:
+  content:
+    name: Joerg Hochwald
+  photos:
+    name: pxfuel
+    link: https://www.pxfuel.com/en/free-photo-xpfiw
