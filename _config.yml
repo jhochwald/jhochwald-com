@@ -9,6 +9,7 @@ sass:
   - Gemfile
   - Gemfile.lock
   - start.sh
+  - LICENSE
 
 # Variables: Configuration
 google_analytics_id:
