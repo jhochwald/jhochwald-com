@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 ruby RUBY_VERSION
 
-gem "github-pages"
+gem "github-pages", ">= 224"
